@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forecast results</title>
+</head>
+
+<body>
+    <h1>7 Day Weather Forecast</h1>
+    <h2>For: {{html_loc}}</h2>
+    {% for i in range(7) %}
+        <h3>{{html_dates_lst[i]}}:</h3>
+        <label>Min-Max degrees (celsius): {{html_min_lst[i]}} to {{html_max_lst[i]}}</label>
+    {% endfor %}
+</body>
+</html>

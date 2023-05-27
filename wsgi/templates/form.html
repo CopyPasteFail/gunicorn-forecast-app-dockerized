@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div style="background-color:yellow;">
+    {% with flash_msgs = get_flashed_messages() %}
+    <!-- A Flask function that pulls all flashed messages from the session and returns them as a list -->
+      {% if flash_msgs %}
+        <ul class=flashes>
+
+        {% for msg in flash_msgs %}
+          {{ msg }}
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    </div>
+
+    <h1>Weather forecast form</h1>
+    <form method="post">
+        <label>Enter location</label>
+        <br>
+        <input type="text" name="wp_input"
+               placeholder="e.g. 'London'"
+        ></input>
+        <br>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p>Hostname: {{ hostname }}</p>
+</body>
+</html>
